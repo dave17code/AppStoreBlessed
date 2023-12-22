@@ -7,30 +7,64 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIPageViewController {
     
-    @IBOutlet weak var wordLbl: UILabel!
-    @IBOutlet weak var wordChapterLbl: UILabel!
+    private var pages = [UIViewController]()
+    private var initialPage = 0
     
-    var words: [String] = ["The LORD bless you, and keep you. The LORD make his face to shine on you, and be gracious to you. The LORD lift up his face towards you, and give you peace.", "Blessed be the God and Father of our Lord Jesus Christ, who has blessed us with every spiritual blessing in the heavenly places in Christ.", "Blessed is the man who doesn’t walk in the counsel of the wicked, nor stand on the path of sinners, nor sit in the seat of scoffers.", "Blessed are the merciful, for they shall obtain mercy.", "My God will supply every need of yours according to his riches in glory in Christ Jesus.", "Blessed are those who hunger and thirst for righteousness, for they shall be filled.", "Blessed is the man who trusts in the LORD, and whose confidence is in the LORD.", "The LORD will command the blessing on you in your barns, and in all that you put your hand to. He will bless you in the land which the LORD your God gives you.", "Blessed are the pure in heart, for they shall see God.", "One who gives to the poor has no lack, but one who closes his eyes will have many curses.", "Blessed are the gentle, for they shall inherit the earth.", "Blessed are those who mourn, for they shall be comforted."]
-    
-    var wordChapter: [String] = ["Numbers 6:24-26", "Ephesians 1:3", "Psalms 1:1", "Matthew 5:7", "Philippians 4:19", "Matthew 5:6", "Jeremiah 17:7", "Deuteronomy 28:8", "Matthew 5:8", "Proverbs 28:27", "Matthew 5:5", "Matthew 5:4"]
-
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    
+    private func setupPage() {
         
-        wordLbl.font = UIFont(name: "Copperplate", size: 24)
-        wordLbl.textAlignment = .center
-        wordLbl.numberOfLines = 0
+        var wordData = wordData().words
         
-        let randomElement = words.randomElement()!
-        let index = words.firstIndex(of: randomElement)!
+        let firstKey = wordData.randomElement()!.key
+        let firstValue = wordData.randomElement()!.value
+        let page1 = PageContentsViewController(wordChapter: firstKey, word: firstValue)
+        wordData[firstKey] = nil
         
-        wordLbl.text = randomElement
-
-        wordChapterLbl.font = UIFont(name: "Copperplate", size: 16)
-        wordChapterLbl.textAlignment = .center
-        wordChapterLbl.text = wordChapter[index]
+        let secondKey = wordData.randomElement()!.key
+        let secondValue = wordData.randomElement()!.value
+        let page2 = PageContentsViewController(wordChapter: secondKey, word: secondValue)
+        wordData[secondKey] = nil
+        
+        let thirdKey = wordData.randomElement()!.key
+        let thirdValue = wordData.randomElement()!.value
+        let page3 = PageContentsViewController(wordChapter: thirdKey, word: thirdValue)
+        wordData[secondKey] = nil
+        
+        pages.append(page1)
+        pages.append(page2)
+        pages.append(page3)
+    }
+    
+    private func setupUI() {
+        // ⭐️ dataSource 화면에 보여질 뷰컨트롤러들을 관리합니다 ⭐️
+        self.dataSource = self
+        // UIPageViewController에서 처음 보여질 뷰컨트롤러 설정 (첫 번째 page)
+        self.setViewControllers([pages[initialPage]], direction: .forward, animated: true)
     }
 }
 
+// MARK: - DataSource
+
+extension ViewController: UIPageViewControllerDataSource {
+    // 이전 뷰컨트롤러를 리턴 (우측 -> 좌측 슬라이드 제스쳐)
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
+        // 현재 VC의 인덱스를 구합니다.
+        guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
+        
+        guard currentIndex > 0 else { return nil }
+        return pages[currentIndex - 1]
+    }
+    
+    // 다음 보여질 뷰컨트롤러를 리턴 (좌측 -> 우측 슬라이드 제스쳐)
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
+        guard let currentIndex = pages.firstIndex(of: viewController) else { return nil }
+        
+        guard currentIndex < (pages.count - 1) else { return nil }
+        return pages[currentIndex + 1]
+    }
+}
