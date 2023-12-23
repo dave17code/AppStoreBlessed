@@ -30,13 +30,13 @@
                                 <rect key="frame" x="0.0" y="201" width="393" height="450"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-xB-LaW">
-                                        <rect key="frame" x="144.66666666666666" y="90" width="104" height="21"/>
+                                        <rect key="frame" x="144.66666666666666" y="70" width="104" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUS-Bg-UMi">
-                                        <rect key="frame" x="15" y="35" width="363" height="20"/>
+                                        <rect key="frame" x="15" y="15" width="363" height="20"/>
                                         <attributedString key="attributedText">
                                             <fragment content="word">
                                                 <attributes>
@@ -52,11 +52,11 @@
                                 <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="4Ky-Qb-kU4"/>
-                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="leading" secondItem="ycX-94-hlE" secondAttribute="leading" constant="15" id="6Af-Mi-2Da"/>
-                                    <constraint firstAttribute="trailing" secondItem="jUS-Bg-UMi" secondAttribute="trailing" constant="15" id="DNW-Rk-i0w"/>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="jUS-Bg-UMi" secondAttribute="bottom" constant="35" id="Fpc-Jg-tos"/>
-                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="top" secondItem="ycX-94-hlE" secondAttribute="top" constant="35" id="pJG-sp-5QN"/>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="wVk-FH-H85"/>
+                                    <constraint firstAttribute="trailing" secondItem="jUS-Bg-UMi" secondAttribute="trailing" constant="15" id="9Rn-Cb-z1B"/>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="YEY-uy-0Si"/>
+                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="leading" secondItem="ycX-94-hlE" secondAttribute="leading" constant="15" id="haB-Dx-196"/>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="jUS-Bg-UMi" secondAttribute="bottom" constant="35" id="mg0-FF-xY2"/>
+                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="top" secondItem="ycX-94-hlE" secondAttribute="top" constant="15" id="tVp-on-1k8"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -81,7 +81,7 @@
         <!--View Controller-->
         <scene sceneID="E1J-pk-fff">
             <objects>
-                <viewController id="IBy-yJ-Mr0" sceneMemberID="viewController">
+                <viewController id="IBy-yJ-Mr0" customClass="ViewController" customModule="Blessed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eHw-Gv-rB8">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -94,6 +94,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="VkU-uX-OMx"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="hwR-Vv-a93" secondAttribute="bottom" id="PEn-0h-39v"/>
@@ -119,7 +120,7 @@
                                 <rect key="frame" x="0.0" y="201" width="393" height="450"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsB-Zh-Izo">
-                                        <rect key="frame" x="15" y="35" width="363" height="20.333333333333329"/>
+                                        <rect key="frame" x="15" y="14.999999999999998" width="363" height="20.333333333333329"/>
                                         <attributedString key="attributedText">
                                             <fragment content="word">
                                                 <attributes>
@@ -131,7 +132,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTj-kn-RWZ">
-                                        <rect key="frame" x="144.66666666666666" y="90.333333333333314" width="104" height="21"/>
+                                        <rect key="frame" x="144.66666666666666" y="70.333333333333314" width="104" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -139,11 +140,11 @@
                                 </subviews>
                                 <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="MsB-Zh-Izo" secondAttribute="trailing" constant="15" id="63r-8w-Sel"/>
-                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="top" secondItem="MsB-Zh-Izo" secondAttribute="bottom" constant="35" id="GUt-86-T1T"/>
-                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="leading" secondItem="pLu-kJ-Mnw" secondAttribute="leading" constant="15" id="M3w-Sg-gNM"/>
-                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="top" secondItem="pLu-kJ-Mnw" secondAttribute="top" constant="35" id="Skn-vF-JGy"/>
-                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="centerX" secondItem="pLu-kJ-Mnw" secondAttribute="centerX" id="fVn-iJ-daj"/>
+                                    <constraint firstAttribute="trailing" secondItem="MsB-Zh-Izo" secondAttribute="trailing" constant="15" id="QDt-RI-yKS"/>
+                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="centerX" secondItem="pLu-kJ-Mnw" secondAttribute="centerX" id="Tif-mX-Ao6"/>
+                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="top" secondItem="pLu-kJ-Mnw" secondAttribute="top" constant="15" id="btl-mo-8Mw"/>
+                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="leading" secondItem="pLu-kJ-Mnw" secondAttribute="leading" constant="15" id="eJb-lD-HMX"/>
+                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="top" secondItem="MsB-Zh-Izo" secondAttribute="bottom" constant="35" id="kfu-aH-q60"/>
                                     <constraint firstAttribute="height" constant="450" id="q4d-I3-L9j"/>
                                 </constraints>
                             </view>
@@ -178,7 +179,7 @@
                                 <rect key="frame" x="0.0" y="201" width="393" height="450"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vD2-sM-nQ6">
-                                        <rect key="frame" x="15" y="35" width="363" height="20.333333333333329"/>
+                                        <rect key="frame" x="15" y="14.999999999999998" width="363" height="20.333333333333329"/>
                                         <attributedString key="attributedText">
                                             <fragment content="word">
                                                 <attributes>
@@ -190,7 +191,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHg-qe-vBL">
-                                        <rect key="frame" x="144.66666666666666" y="90.333333333333314" width="104" height="21"/>
+                                        <rect key="frame" x="144.66666666666666" y="70.333333333333314" width="104" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -198,12 +199,12 @@
                                 </subviews>
                                 <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
-                                    <constraint firstItem="vD2-sM-nQ6" firstAttribute="top" secondItem="3fF-nG-nrp" secondAttribute="top" constant="35" id="2hu-as-PqB"/>
                                     <constraint firstAttribute="height" constant="450" id="6At-uu-vM1"/>
-                                    <constraint firstItem="nHg-qe-vBL" firstAttribute="top" secondItem="vD2-sM-nQ6" secondAttribute="bottom" constant="35" id="6rp-gO-ByH"/>
-                                    <constraint firstAttribute="trailing" secondItem="vD2-sM-nQ6" secondAttribute="trailing" constant="15" id="MyU-EO-XsH"/>
-                                    <constraint firstItem="nHg-qe-vBL" firstAttribute="centerX" secondItem="3fF-nG-nrp" secondAttribute="centerX" id="YTH-5l-WV8"/>
-                                    <constraint firstItem="vD2-sM-nQ6" firstAttribute="leading" secondItem="3fF-nG-nrp" secondAttribute="leading" constant="15" id="t9i-5K-eTW"/>
+                                    <constraint firstItem="vD2-sM-nQ6" firstAttribute="top" secondItem="3fF-nG-nrp" secondAttribute="top" constant="15" id="Hzw-AU-e3g"/>
+                                    <constraint firstItem="vD2-sM-nQ6" firstAttribute="leading" secondItem="3fF-nG-nrp" secondAttribute="leading" constant="15" id="Ibq-zW-LXw"/>
+                                    <constraint firstItem="nHg-qe-vBL" firstAttribute="top" secondItem="vD2-sM-nQ6" secondAttribute="bottom" constant="35" id="KN7-KI-WX1"/>
+                                    <constraint firstItem="nHg-qe-vBL" firstAttribute="centerX" secondItem="3fF-nG-nrp" secondAttribute="centerX" id="Ky2-0t-qah"/>
+                                    <constraint firstAttribute="trailing" secondItem="vD2-sM-nQ6" secondAttribute="trailing" constant="15" id="LrS-dg-6En"/>
                                 </constraints>
                             </view>
                         </subviews>
