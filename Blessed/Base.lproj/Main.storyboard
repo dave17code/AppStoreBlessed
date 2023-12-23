@@ -30,27 +30,33 @@
                                 <rect key="frame" x="0.0" y="201" width="393" height="450"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-xB-LaW">
-                                        <rect key="frame" x="144.66666666666666" y="135.33333333333331" width="104" height="21"/>
+                                        <rect key="frame" x="144.66666666666666" y="90" width="104" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mff-eb-Z6Z">
-                                        <rect key="frame" x="10" y="80" width="373" height="20.333333333333329"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUS-Bg-UMi">
+                                        <rect key="frame" x="15" y="35" width="363" height="20"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="word">
+                                                <attributes>
+                                                    <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="450" id="4Ky-Qb-kU4"/>
-                                    <constraint firstItem="mff-eb-Z6Z" firstAttribute="leading" secondItem="ycX-94-hlE" secondAttribute="leading" constant="10" id="Ipi-gD-Eq6"/>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="Kja-Xo-RBY"/>
-                                    <constraint firstItem="mff-eb-Z6Z" firstAttribute="top" secondItem="ycX-94-hlE" secondAttribute="top" constant="80" id="WDm-K1-pzU"/>
-                                    <constraint firstAttribute="trailing" secondItem="mff-eb-Z6Z" secondAttribute="trailing" constant="10" id="g6r-94-sFV"/>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="mff-eb-Z6Z" secondAttribute="bottom" constant="35" id="maU-31-kTz"/>
-                                    <constraint firstItem="mff-eb-Z6Z" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="wtz-WA-hXm"/>
+                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="leading" secondItem="ycX-94-hlE" secondAttribute="leading" constant="15" id="6Af-Mi-2Da"/>
+                                    <constraint firstAttribute="trailing" secondItem="jUS-Bg-UMi" secondAttribute="trailing" constant="15" id="DNW-Rk-i0w"/>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="jUS-Bg-UMi" secondAttribute="bottom" constant="35" id="Fpc-Jg-tos"/>
+                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="top" secondItem="ycX-94-hlE" secondAttribute="top" constant="35" id="pJG-sp-5QN"/>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="wVk-FH-H85"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -65,7 +71,7 @@
                     </view>
                     <connections>
                         <outlet property="wordChapterLabel" destination="ah2-xB-LaW" id="8Yw-s2-2W3"/>
-                        <outlet property="wordLabel" destination="mff-eb-Z6Z" id="ere-Rn-AWv"/>
+                        <outlet property="wordLabel" destination="jUS-Bg-UMi" id="bze-jz-peV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grH-gv-LyM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -101,31 +107,119 @@
             </objects>
             <point key="canvasLocation" x="-3358" y="-3889"/>
         </scene>
-        <!--View Controller-->
+        <!--Third PageVC-->
         <scene sceneID="shA-UJ-pWh">
             <objects>
-                <viewController storyboardIdentifier="ThirdPageVC" id="oqc-Zg-abX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ThirdPageVC" id="oqc-Zg-abX" customClass="ThirdPageVC" customModule="Blessed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7km-iH-4UL">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLu-kJ-Mnw">
+                                <rect key="frame" x="0.0" y="201" width="393" height="450"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsB-Zh-Izo">
+                                        <rect key="frame" x="15" y="35" width="363" height="20.333333333333329"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="word">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTj-kn-RWZ">
+                                        <rect key="frame" x="144.66666666666666" y="90.333333333333314" width="104" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="BlessedAppMainColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MsB-Zh-Izo" secondAttribute="trailing" constant="15" id="63r-8w-Sel"/>
+                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="top" secondItem="MsB-Zh-Izo" secondAttribute="bottom" constant="35" id="GUt-86-T1T"/>
+                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="leading" secondItem="pLu-kJ-Mnw" secondAttribute="leading" constant="15" id="M3w-Sg-gNM"/>
+                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="top" secondItem="pLu-kJ-Mnw" secondAttribute="top" constant="35" id="Skn-vF-JGy"/>
+                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="centerX" secondItem="pLu-kJ-Mnw" secondAttribute="centerX" id="fVn-iJ-daj"/>
+                                    <constraint firstAttribute="height" constant="450" id="q4d-I3-L9j"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vLl-L5-557"/>
-                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <color key="backgroundColor" name="BlessedAppMainColor"/>
+                        <constraints>
+                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="centerX" secondItem="7km-iH-4UL" secondAttribute="centerX" id="V8y-KT-H0L"/>
+                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="trailing" secondItem="vLl-L5-557" secondAttribute="trailing" id="XDf-80-CD3"/>
+                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="centerY" secondItem="7km-iH-4UL" secondAttribute="centerY" id="gsX-S2-mMx"/>
+                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="leading" secondItem="vLl-L5-557" secondAttribute="leading" id="hw8-7H-8mf"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wordChapterLabel" destination="PTj-kn-RWZ" id="mVx-u8-wJD"/>
+                        <outlet property="wordLabel" destination="MsB-Zh-Izo" id="ocX-XO-6u1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KA-lD-Ydf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-683" y="-3161"/>
         </scene>
-        <!--View Controller-->
+        <!--Second PageVC-->
         <scene sceneID="bEa-Pf-y2c">
             <objects>
-                <viewController storyboardIdentifier="SecondPageVC" id="QiS-Qe-tyu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondPageVC" id="QiS-Qe-tyu" customClass="SecondPageVC" customModule="Blessed" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E33-ZA-18w">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3fF-nG-nrp">
+                                <rect key="frame" x="0.0" y="201" width="393" height="450"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vD2-sM-nQ6">
+                                        <rect key="frame" x="15" y="35" width="363" height="20.333333333333329"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="word">
+                                                <attributes>
+                                                    <font key="NSFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHg-qe-vBL">
+                                        <rect key="frame" x="144.66666666666666" y="90.333333333333314" width="104" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" name="BlessedAppMainColor"/>
+                                <constraints>
+                                    <constraint firstItem="vD2-sM-nQ6" firstAttribute="top" secondItem="3fF-nG-nrp" secondAttribute="top" constant="35" id="2hu-as-PqB"/>
+                                    <constraint firstAttribute="height" constant="450" id="6At-uu-vM1"/>
+                                    <constraint firstItem="nHg-qe-vBL" firstAttribute="top" secondItem="vD2-sM-nQ6" secondAttribute="bottom" constant="35" id="6rp-gO-ByH"/>
+                                    <constraint firstAttribute="trailing" secondItem="vD2-sM-nQ6" secondAttribute="trailing" constant="15" id="MyU-EO-XsH"/>
+                                    <constraint firstItem="nHg-qe-vBL" firstAttribute="centerX" secondItem="3fF-nG-nrp" secondAttribute="centerX" id="YTH-5l-WV8"/>
+                                    <constraint firstItem="vD2-sM-nQ6" firstAttribute="leading" secondItem="3fF-nG-nrp" secondAttribute="leading" constant="15" id="t9i-5K-eTW"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="wwj-kd-Fez"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="BlessedAppMainColor"/>
+                        <constraints>
+                            <constraint firstItem="3fF-nG-nrp" firstAttribute="leading" secondItem="wwj-kd-Fez" secondAttribute="leading" id="JFu-jn-x9k"/>
+                            <constraint firstItem="3fF-nG-nrp" firstAttribute="trailing" secondItem="wwj-kd-Fez" secondAttribute="trailing" id="NPg-Vv-fla"/>
+                            <constraint firstItem="3fF-nG-nrp" firstAttribute="centerY" secondItem="E33-ZA-18w" secondAttribute="centerY" id="TqZ-G5-oKf"/>
+                            <constraint firstItem="3fF-nG-nrp" firstAttribute="centerX" secondItem="E33-ZA-18w" secondAttribute="centerX" id="oFy-KL-ChO"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="wordChapterLabel" destination="nHg-qe-vBL" id="ino-XE-he1"/>
+                        <outlet property="wordLabel" destination="vD2-sM-nQ6" id="ofe-x8-yh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcr-pU-qGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -138,12 +232,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemPinkColor">
-            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemYellowColor">
-            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
