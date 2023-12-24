@@ -9,21 +9,37 @@ import UIKit
 
 class SecondPageVC: UIViewController {
     
-    @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var wordChapterLabel: UILabel!
+    @IBOutlet weak var wordLbl: UILabel!
+    @IBOutlet weak var wordChapterLbl: UILabel!
+    var wordDataInSecondPageVC: WordData = WordData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        wordLabel.font = UIFont(name: "Copperplate", size: 24)
-        wordLabel.textAlignment = .center
-        wordLabel.numberOfLines = 0
+        wordLbl.font = UIFont(name: "Copperplate", size: 24)
+        wordLbl.textAlignment = .center
+        wordLbl.numberOfLines = 0
+        wordLbl.text = wordDataInSecondPageVC.words[1]
         
-        wordChapterLabel.font = UIFont(name: "Copperplate", size: 16)
-        wordChapterLabel.textAlignment = .center
+        wordChapterLbl.font = UIFont(name: "Copperplate", size: 16)
+        wordChapterLbl.textAlignment = .center
+        wordChapterLbl.text = wordDataInSecondPageVC.wordChapter[1]
         
-        wordLabel.text = WordData().words[1]
-        wordChapterLabel.text = WordData().wordChapter[1]
+        NotificationCenter.default.addObserver(self, selector: #selector(resetWordLbl(_:)), name: Notification.Name("resetWordLblSecondPageVC"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(resetWordChapterLbl(_:)), name: Notification.Name("resetWordChapterLblSecondPageVC"), object: nil)
+    }
+    
+    @objc func resetWordLbl(_ notification: Notification) {
+        if let text = notification.object as? String {
+            wordLbl.text = text
+        }
+    }
+    
+    @objc func resetWordChapterLbl(_ notification: Notification) {
+        if let text = notification.object as? String {
+            wordChapterLbl.text = text
+        }
     }
     
     

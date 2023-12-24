@@ -13,7 +13,7 @@
         <!--Page View Controller-->
         <scene sceneID="abj-81-YKw">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="EDP-Fu-Azy" customClass="PageViewController" customModule="Blessed" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="EDP-Fu-Azy" customClass="PageViewController" customModule="Blessed" customModuleProvider="target" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p3T-rS-35u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-2282" y="-3888"/>
@@ -30,13 +30,13 @@
                                 <rect key="frame" x="0.0" y="201" width="393" height="450"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-xB-LaW">
-                                        <rect key="frame" x="144.66666666666666" y="70" width="104" height="21"/>
+                                        <rect key="frame" x="144.66666666666666" y="70.333333333333314" width="104" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jUS-Bg-UMi">
-                                        <rect key="frame" x="15" y="15" width="363" height="20"/>
+                                        <rect key="frame" x="15" y="14.999999999999998" width="363" height="20.333333333333329"/>
                                         <attributedString key="attributedText">
                                             <fragment content="word">
                                                 <attributes>
@@ -70,13 +70,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="wordChapterLabel" destination="ah2-xB-LaW" id="8Yw-s2-2W3"/>
-                        <outlet property="wordLabel" destination="jUS-Bg-UMi" id="bze-jz-peV"/>
+                        <outlet property="wordChapterLbl" destination="ah2-xB-LaW" id="5xM-cc-h7y"/>
+                        <outlet property="wordLbl" destination="jUS-Bg-UMi" id="dZT-7A-feN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grH-gv-LyM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2286.2595419847326" y="-3161.2676056338028"/>
+            <point key="canvasLocation" x="-2282" y="-3100"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="E1J-pk-fff">
@@ -159,13 +159,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="wordChapterLabel" destination="PTj-kn-RWZ" id="mVx-u8-wJD"/>
-                        <outlet property="wordLabel" destination="MsB-Zh-Izo" id="ocX-XO-6u1"/>
+                        <outlet property="wordChapterLbl" destination="PTj-kn-RWZ" id="p22-dN-jba"/>
+                        <outlet property="wordLbl" destination="MsB-Zh-Izo" id="CeK-Yk-ytn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8KA-lD-Ydf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-683" y="-3161"/>
+            <point key="canvasLocation" x="-421" y="-3100"/>
         </scene>
         <!--Second PageVC-->
         <scene sceneID="bEa-Pf-y2c">
@@ -218,13 +218,13 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="wordChapterLabel" destination="nHg-qe-vBL" id="ino-XE-he1"/>
-                        <outlet property="wordLabel" destination="vD2-sM-nQ6" id="ofe-x8-yh6"/>
+                        <outlet property="wordChapterLbl" destination="nHg-qe-vBL" id="cHB-lU-lbM"/>
+                        <outlet property="wordLbl" destination="vD2-sM-nQ6" id="iG1-3l-Kbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mcr-pU-qGG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1482" y="-3161"/>
+            <point key="canvasLocation" x="-1353" y="-3100"/>
         </scene>
     </scenes>
     <resources>

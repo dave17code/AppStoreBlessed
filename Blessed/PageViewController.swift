@@ -11,8 +11,9 @@ import Then
 
 class PageViewController: UIPageViewController {
     
- 
-    let pageControl: UIPageControl = UIPageControl().then {
+    var wordDataInPageVC: WordData = WordData()
+    
+    let pageControl = UIPageControl().then {
         _ in
     }
     
@@ -21,6 +22,11 @@ class PageViewController: UIPageViewController {
                 self.vcInstance(name: "SecondPageVC"),
                 self.vcInstance(name: "ThirdPageVC")]
     }()
+    
+    let resetWordBtn = UIButton().then {
+        $0.backgroundColor = .yellow
+        $0.addTarget(self, action: #selector(resetWordBtnTapped(_:)), for: .touchUpInside)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,10 +49,37 @@ class PageViewController: UIPageViewController {
             $0.bottom.equalToSuperview().inset(170)
             $0.centerX.equalToSuperview()
         }
+        
+        view.addSubview(resetWordBtn)
+        resetWordBtn.snp.makeConstraints {
+            $0.width.equalTo(100)
+            $0.height.equalTo(100)
+            $0.bottom.equalToSuperview().inset(300)
+            $0.centerX.equalToSuperview()
+            $0.centerY.equalToSuperview()
+
+        }
     }
     
-    private func vcInstance(name: String) -> UIViewController{
+    private func vcInstance(name: String) -> UIViewController {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: name)
+    }
+    
+    @objc func resetWordBtnTapped(_ sender: Any) {
+        
+        wordDataInPageVC.wordsShuffle()
+        wordDataInPageVC.wordChapterShuffle()
+        
+        print(wordDataInPageVC.wordChapter)
+        
+        NotificationCenter.default.post(name: Notification.Name("resetWordLblFirstPageVC"), object: wordDataInPageVC.words[0])
+        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblFirstPageVC"), object: wordDataInPageVC.wordChapter[0])
+        
+        NotificationCenter.default.post(name: Notification.Name("resetWordLblSecondPageVC"), object: wordDataInPageVC.words[1])
+        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblSecondPageVC"), object: wordDataInPageVC.wordChapter[1])
+        
+        NotificationCenter.default.post(name: Notification.Name("resetWordLblThirdPageVC"), object: wordDataInPageVC.words[2])
+        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblThirdPageVC"), object: wordDataInPageVC.wordChapter[2])
     }
 }
 
