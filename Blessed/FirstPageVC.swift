@@ -9,6 +9,7 @@ import UIKit
 
 class FirstPageVC: UIViewController {
     
+    @IBOutlet weak var viewForContent: UIView!
     @IBOutlet weak var wordLbl: UILabel!
     @IBOutlet weak var wordChapterLbl: UILabel!
     var wordDataInFirstPageVC: WordData = WordData()
@@ -31,14 +32,22 @@ class FirstPageVC: UIViewController {
     }
     
     @objc func resetWordLbl(_ notification: Notification) {
+        viewForContent.fadeOut()
         if let text = notification.object as? String {
             wordLbl.text = text
         }
+        viewForContent.fadeIn()
     }
     
     @objc func resetWordChapterLbl(_ notification: Notification) {
+        viewForContent.fadeOut()
         if let text = notification.object as? String {
             wordChapterLbl.text = text
         }
+        viewForContent.fadeIn()
     }
 }
+
+
+
+

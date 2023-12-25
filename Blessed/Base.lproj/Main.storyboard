@@ -51,12 +51,12 @@
                                 </subviews>
                                 <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="2Pg-D7-RDA"/>
                                     <constraint firstAttribute="height" constant="450" id="4Ky-Qb-kU4"/>
-                                    <constraint firstAttribute="trailing" secondItem="jUS-Bg-UMi" secondAttribute="trailing" constant="15" id="9Rn-Cb-z1B"/>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="YEY-uy-0Si"/>
-                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="leading" secondItem="ycX-94-hlE" secondAttribute="leading" constant="15" id="haB-Dx-196"/>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="jUS-Bg-UMi" secondAttribute="bottom" constant="35" id="mg0-FF-xY2"/>
-                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="top" secondItem="ycX-94-hlE" secondAttribute="top" constant="15" id="tVp-on-1k8"/>
+                                    <constraint firstAttribute="trailing" secondItem="jUS-Bg-UMi" secondAttribute="trailing" constant="15" id="6CG-oi-CHN"/>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="jUS-Bg-UMi" secondAttribute="bottom" constant="35" id="Fbr-m4-SFv"/>
+                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="leading" secondItem="ycX-94-hlE" secondAttribute="leading" constant="15" id="ofB-No-nq6"/>
+                                    <constraint firstItem="jUS-Bg-UMi" firstAttribute="top" secondItem="ycX-94-hlE" secondAttribute="top" constant="15" id="rkT-TR-cD3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -70,6 +70,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="viewForContent" destination="ycX-94-hlE" id="kRJ-L9-9Tr"/>
                         <outlet property="wordChapterLbl" destination="ah2-xB-LaW" id="5xM-cc-h7y"/>
                         <outlet property="wordLbl" destination="jUS-Bg-UMi" id="dZT-7A-feN"/>
                     </connections>
@@ -159,6 +160,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="viewForContent" destination="pLu-kJ-Mnw" id="Kcw-Ug-m2F"/>
                         <outlet property="wordChapterLbl" destination="PTj-kn-RWZ" id="p22-dN-jba"/>
                         <outlet property="wordLbl" destination="MsB-Zh-Izo" id="CeK-Yk-ytn"/>
                     </connections>
@@ -218,6 +220,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="viewForContent" destination="3fF-nG-nrp" id="Fv1-5F-DWG"/>
                         <outlet property="wordChapterLbl" destination="nHg-qe-vBL" id="cHB-lU-lbM"/>
                         <outlet property="wordLbl" destination="vD2-sM-nQ6" id="iG1-3l-Kbo"/>
                     </connections>

@@ -39,7 +39,7 @@ class PageViewController: UIPageViewController {
         }
         
         view.addSubview(pageControl)
-        
+        pageControl.isEnabled = false
         pageControl.numberOfPages = vcArray.count
         pageControl.currentPage = 0
         pageControl.pageIndicatorTintColor = UIColor.lightGray
@@ -125,5 +125,20 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = vcArray.firstIndex(of: pageContentViewController)!
+    }
+}
+
+public extension UIView {
+    
+    func fadeIn(duration: TimeInterval = 0.3) {
+        UIView.animate(withDuration: duration, animations: {
+            self.alpha = 1.0
+        })
+    }
+    
+    func fadeOut(duration: TimeInterval = 0.3) {
+        UIView.animate(withDuration: duration, animations: {
+            self.alpha = 0.0
+        })
     }
 }

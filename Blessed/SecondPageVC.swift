@@ -9,6 +9,7 @@ import UIKit
 
 class SecondPageVC: UIViewController {
     
+    @IBOutlet weak var viewForContent: UIView!
     @IBOutlet weak var wordLbl: UILabel!
     @IBOutlet weak var wordChapterLbl: UILabel!
     var wordDataInSecondPageVC: WordData = WordData()
@@ -31,18 +32,18 @@ class SecondPageVC: UIViewController {
     }
     
     @objc func resetWordLbl(_ notification: Notification) {
+        viewForContent.fadeOut()
         if let text = notification.object as? String {
             wordLbl.text = text
         }
+        viewForContent.fadeIn()
     }
     
     @objc func resetWordChapterLbl(_ notification: Notification) {
+        viewForContent.fadeOut()
         if let text = notification.object as? String {
             wordChapterLbl.text = text
         }
+        viewForContent.fadeIn()
     }
-    
-    
-    
-    
 }
