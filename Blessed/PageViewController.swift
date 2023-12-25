@@ -24,7 +24,9 @@ class PageViewController: UIPageViewController {
     }()
     
     let resetWordBtn = UIButton().then {
-        $0.backgroundColor = .yellow
+        $0.setBackgroundImage(UIImage(systemName: "arrow.triangle.2.circlepath.circle.fill"), for: .normal)
+        $0.backgroundColor = .clear
+        $0.tintColor = UIColor.lightGray
         $0.addTarget(self, action: #selector(resetWordBtnTapped(_:)), for: .touchUpInside)
     }
 
@@ -46,18 +48,16 @@ class PageViewController: UIPageViewController {
         pageControl.currentPageIndicatorTintColor = UIColor.black
         
         pageControl.snp.makeConstraints {
-            $0.bottom.equalToSuperview().inset(170)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(65)
             $0.centerX.equalToSuperview()
         }
         
         view.addSubview(resetWordBtn)
         resetWordBtn.snp.makeConstraints {
-            $0.width.equalTo(100)
-            $0.height.equalTo(100)
-            $0.bottom.equalToSuperview().inset(300)
+            $0.width.equalTo(50)
+            $0.height.equalTo(50)
+            $0.bottom.equalToSuperview().inset(10)
             $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview()
-
         }
     }
     
