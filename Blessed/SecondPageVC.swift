@@ -9,22 +9,23 @@ import UIKit
 
 class SecondPageVC: UIViewController {
     
+    var wordData: WordData = WordData()
+    
     @IBOutlet weak var viewForContent: UIView!
     @IBOutlet weak var wordLbl: UILabel!
     @IBOutlet weak var wordChapterLbl: UILabel!
-    var wordDataInSecondPageVC: WordData = WordData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        wordLbl.font = UIFont(name: "Copperplate", size: 24)
+        wordLbl.font = UIFont(name: "Copperplate", size: 23)
         wordLbl.textAlignment = .center
         wordLbl.numberOfLines = 0
-        wordLbl.text = wordDataInSecondPageVC.words[1]
-        
+        wordLbl.text = Array(wordData.wordDictionary.values)[1]
+
         wordChapterLbl.font = UIFont(name: "Copperplate", size: 16)
         wordChapterLbl.textAlignment = .center
-        wordChapterLbl.text = wordDataInSecondPageVC.wordChapter[1]
+        wordChapterLbl.text = Array(wordData.wordDictionary.keys)[1]
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetWordLbl(_:)), name: Notification.Name("resetWordLblSecondPageVC"), object: nil)
         

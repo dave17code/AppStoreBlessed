@@ -117,10 +117,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pLu-kJ-Mnw">
-                                <rect key="frame" x="0.0" y="149" width="393" height="450"/>
+                                <rect key="frame" x="0.0" y="159" width="393" height="200"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MsB-Zh-Izo">
-                                        <rect key="frame" x="15" y="14.999999999999998" width="363" height="20.333333333333329"/>
+                                        <rect key="frame" x="15" y="25" width="363" height="20.333333333333329"/>
                                         <attributedString key="attributedText">
                                             <fragment content="word">
                                                 <attributes>
@@ -132,7 +132,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PTj-kn-RWZ">
-                                        <rect key="frame" x="144.66666666666666" y="70.333333333333343" width="104" height="21"/>
+                                        <rect key="frame" x="144.66666666666666" y="80.333333333333343" width="104" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -140,21 +140,21 @@
                                 </subviews>
                                 <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="MsB-Zh-Izo" secondAttribute="trailing" constant="15" id="2Mc-Sb-9zx"/>
-                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="leading" secondItem="pLu-kJ-Mnw" secondAttribute="leading" constant="15" id="i8l-vD-Vam"/>
-                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="top" secondItem="pLu-kJ-Mnw" secondAttribute="top" constant="15" id="iBP-Jj-0ZB"/>
-                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="top" secondItem="MsB-Zh-Izo" secondAttribute="bottom" constant="35" id="wKu-N1-Kg4"/>
-                                    <constraint firstAttribute="height" constant="450" id="wVC-V3-EtM"/>
-                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="centerX" secondItem="pLu-kJ-Mnw" secondAttribute="centerX" id="xA7-eT-Dta"/>
+                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="top" secondItem="pLu-kJ-Mnw" secondAttribute="top" constant="25" id="1HG-MR-iO5"/>
+                                    <constraint firstAttribute="trailing" secondItem="MsB-Zh-Izo" secondAttribute="trailing" constant="15" id="PtR-oU-6kV"/>
+                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="top" secondItem="MsB-Zh-Izo" secondAttribute="bottom" constant="35" id="YDk-Do-VTA"/>
+                                    <constraint firstItem="PTj-kn-RWZ" firstAttribute="centerX" secondItem="pLu-kJ-Mnw" secondAttribute="centerX" id="dEu-uW-nel"/>
+                                    <constraint firstItem="MsB-Zh-Izo" firstAttribute="leading" secondItem="pLu-kJ-Mnw" secondAttribute="leading" constant="15" id="lKL-7a-OhP"/>
+                                    <constraint firstAttribute="height" constant="200" id="q0n-GB-LdJ"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vLl-L5-557"/>
                         <color key="backgroundColor" name="BlessedAppMainColor"/>
                         <constraints>
-                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="top" secondItem="vLl-L5-557" secondAttribute="top" constant="90" id="9dZ-xS-DoG"/>
-                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="leading" secondItem="vLl-L5-557" secondAttribute="leading" id="a8R-zf-2Cv"/>
-                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="trailing" secondItem="vLl-L5-557" secondAttribute="trailing" id="jBL-2v-325"/>
+                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="trailing" secondItem="vLl-L5-557" secondAttribute="trailing" id="Fxb-kH-CUk"/>
+                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="leading" secondItem="vLl-L5-557" secondAttribute="leading" id="gfW-Bi-e50"/>
+                            <constraint firstItem="pLu-kJ-Mnw" firstAttribute="top" secondItem="vLl-L5-557" secondAttribute="top" constant="100" id="pi2-xV-M5p"/>
                         </constraints>
                     </view>
                     <connections>

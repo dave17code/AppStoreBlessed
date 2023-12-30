@@ -9,10 +9,11 @@ import UIKit
 
 class FirstPageVC: UIViewController {
     
+    var wordData: WordData = WordData()
+    
     @IBOutlet weak var viewForContent: UIView!
     @IBOutlet weak var wordLbl: UILabel!
     @IBOutlet weak var wordChapterLbl: UILabel!
-    var wordDataInFirstPageVC: WordData = WordData()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,16 +21,15 @@ class FirstPageVC: UIViewController {
         wordLbl.font = UIFont(name: "Copperplate", size: 23)
         wordLbl.textAlignment = .center
         wordLbl.numberOfLines = 0
-        wordLbl.text = wordDataInFirstPageVC.words[7]
+        wordLbl.text = Array(wordData.wordDictionary.values)[0]
 
         wordChapterLbl.font = UIFont(name: "Copperplate", size: 16)
         wordChapterLbl.textAlignment = .center
-        wordChapterLbl.text = wordDataInFirstPageVC.wordChapter[0]
+        wordChapterLbl.text = Array(wordData.wordDictionary.keys)[0]
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetWordLbl(_:)), name: Notification.Name("resetWordLblFirstPageVC"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetWordChapterLbl(_:)), name: Notification.Name("resetWordChapterLblFirstPageVC"), object: nil)
-        
     }
     
     private func vcInstance(name: String) -> UIViewController {

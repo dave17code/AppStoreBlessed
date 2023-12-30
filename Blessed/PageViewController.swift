@@ -11,7 +11,9 @@ import Then
 
 class PageViewController: UIPageViewController {
     
-    var wordDataInPageVC: WordData = WordData()
+//    var wordDataInPageVC: WordData = WordData()
+    
+    var wordData: WordData = WordData()
     
     let pageControl = UIPageControl().then {
         _ in
@@ -54,9 +56,9 @@ class PageViewController: UIPageViewController {
         
         view.addSubview(resetWordBtn)
         resetWordBtn.snp.makeConstraints {
-            $0.width.equalTo(50)
-            $0.height.equalTo(50)
-            $0.bottom.equalToSuperview().inset(10)
+            $0.width.equalTo(35)
+            $0.height.equalTo(35)
+            $0.bottom.equalToSuperview().inset(170)
             $0.centerX.equalToSuperview()
         }
     }
@@ -67,19 +69,25 @@ class PageViewController: UIPageViewController {
     
     @objc func resetWordBtnTapped(_ sender: Any) {
         
-        wordDataInPageVC.wordsShuffle()
-        wordDataInPageVC.wordChapterShuffle()
+        let rotation: CABasicAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        // pi = 180도
+        rotation.toValue = Double.pi
+        // 1바퀴 도는데 걸리는 시간
+        rotation.duration = 0.5
+        // 반복 횟수 = infinity(무한대)
+        rotation.repeatCount = 1
+        resetWordBtn.layer.add(rotation, forKey: "rotationAnimation")
         
-        print(wordDataInPageVC.wordChapter)
+        wordData.resetWordDictionaryData = Dictionary(uniqueKeysWithValues: wordData.wordDictionary.shuffled())
         
-        NotificationCenter.default.post(name: Notification.Name("resetWordLblFirstPageVC"), object: wordDataInPageVC.words[0])
-        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblFirstPageVC"), object: wordDataInPageVC.wordChapter[0])
+        NotificationCenter.default.post(name: Notification.Name("resetWordLblFirstPageVC"), object: Array(wordData.resetWordDictionaryData.values)[0])
+        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblFirstPageVC"), object: Array(wordData.resetWordDictionaryData.keys)[0])
         
-        NotificationCenter.default.post(name: Notification.Name("resetWordLblSecondPageVC"), object: wordDataInPageVC.words[1])
-        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblSecondPageVC"), object: wordDataInPageVC.wordChapter[1])
+        NotificationCenter.default.post(name: Notification.Name("resetWordLblSecondPageVC"), object: Array(wordData.resetWordDictionaryData.values)[1])
+        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblSecondPageVC"), object: Array(wordData.resetWordDictionaryData.keys)[1])
         
-        NotificationCenter.default.post(name: Notification.Name("resetWordLblThirdPageVC"), object: wordDataInPageVC.words[2])
-        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblThirdPageVC"), object: wordDataInPageVC.wordChapter[2])
+        NotificationCenter.default.post(name: Notification.Name("resetWordLblThirdPageVC"), object: Array(wordData.resetWordDictionaryData.values)[2])
+        NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblThirdPageVC"), object: Array(wordData.resetWordDictionaryData.keys)[2])
     }
 }
 

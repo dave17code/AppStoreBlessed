@@ -8,23 +8,24 @@
 import UIKit
 
 class ThirdPageVC: UIViewController {
+
+    var wordData: WordData = WordData()
     
     @IBOutlet weak var viewForContent: UIView!
     @IBOutlet weak var wordLbl: UILabel!
     @IBOutlet weak var wordChapterLbl: UILabel!
-    var wordDataInThirdPageVC: WordData = WordData()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        wordLbl.font = UIFont(name: "Copperplate", size: 24)
+        wordLbl.font = UIFont(name: "Copperplate", size: 23)
         wordLbl.textAlignment = .center
         wordLbl.numberOfLines = 0
-        wordLbl.text = wordDataInThirdPageVC.words[2]
-        
+        wordLbl.text = Array(wordData.wordDictionary.values)[2]
+
         wordChapterLbl.font = UIFont(name: "Copperplate", size: 16)
         wordChapterLbl.textAlignment = .center
-        wordChapterLbl.text = wordDataInThirdPageVC.wordChapter[2]
+        wordChapterLbl.text = Array(wordData.wordDictionary.keys)[2]
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetWordLbl(_:)), name: Notification.Name("resetWordLblThirdPageVC"), object: nil)
         
