@@ -35,6 +35,8 @@ class PageViewController: UIPageViewController {
         $0.titleLabel?.font = UIFont(name: "Copperplate", size: 21)
         $0.setTitle("T", for: .normal)
         $0.setTitleColor(UIColor.black, for: .normal)
+        $0.addTarget(self, action: #selector(wordLblTextColorToBlack(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(wordChapterLblTextColorToBlack(_:)), for: .touchUpInside)
     }
     
     let textColorToWhiteBtn = UIButton().then {
@@ -43,6 +45,8 @@ class PageViewController: UIPageViewController {
         $0.titleLabel?.font = UIFont(name: "Copperplate", size: 21)
         $0.setTitle("T", for: .normal)
         $0.setTitleColor(UIColor.white, for: .normal)
+        $0.addTarget(self, action: #selector(wordLblTextColorToWhite(_:)), for: .touchUpInside)
+        $0.addTarget(self, action: #selector(wordChapterLblTextColorToWhite(_:)), for: .touchUpInside)
     }
     
     let backgroundColorPicker = UIColorWell(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
@@ -137,6 +141,23 @@ class PageViewController: UIPageViewController {
         
         NotificationCenter.default.post(name: Notification.Name("resetWordLblThirdPageVC"), object: Array(wordData.resetWordDictionaryData.values)[2])
         NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblThirdPageVC"), object: Array(wordData.resetWordDictionaryData.keys)[2])
+        
+    }
+    
+    @objc func wordLblTextColorToBlack(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("wordLblColorToBlack"), object: nil)
+    }
+    
+    @objc func wordChapterLblTextColorToBlack(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("wordChapterLblColorToBlack"), object: nil)
+    }
+    
+    @objc func wordLblTextColorToWhite(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("wordLblColorToWhite"), object: nil)
+    }
+    
+    @objc func wordChapterLblTextColorToWhite(_ sender: Any) {
+        NotificationCenter.default.post(name: Notification.Name("wordChapterLblColorToWhite"), object: nil)
     }
 }
 

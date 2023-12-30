@@ -18,6 +18,8 @@ class FirstPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
         wordLbl.font = UIFont(name: "Kefa", size: 22)
         wordLbl.textAlignment = .center
         wordLbl.numberOfLines = 0
@@ -30,6 +32,14 @@ class FirstPageVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(resetWordLbl(_:)), name: Notification.Name("resetWordLblFirstPageVC"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(resetWordChapterLbl(_:)), name: Notification.Name("resetWordChapterLblFirstPageVC"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(wordLblColorToBlack(_:)), name: Notification.Name("wordLblColorToBlack"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(wordChapterLblColorToBlack(_:)), name: Notification.Name("wordChapterLblColorToBlack"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(wordLblColorToWhite(_:)), name: Notification.Name("wordLblColorToWhite"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(wordChapterLblColorToWhite(_:)), name: Notification.Name("wordChapterLblColorToWhite"), object: nil)
     }
     
     private func vcInstance(name: String) -> UIViewController {
@@ -49,6 +59,30 @@ class FirstPageVC: UIViewController {
         if let text = notification.object as? String {
             wordChapterLbl.text = text
         }
+        viewForContent.fadeIn()
+    }
+    
+    @objc func wordLblColorToBlack(_ notification: Notification) {
+        viewForContent.fadeOut()
+        wordLbl.textColor = .black
+        viewForContent.fadeIn()
+    }
+    
+    @objc func wordChapterLblColorToBlack(_ notification: Notification) {
+        viewForContent.fadeOut()
+        wordChapterLbl.textColor = .black
+        viewForContent.fadeIn()
+    }
+    
+    @objc func wordLblColorToWhite(_ notification: Notification) {
+        viewForContent.fadeOut()
+        wordLbl.textColor = .white
+        viewForContent.fadeIn()
+    }
+    
+    @objc func wordChapterLblColorToWhite(_ notification: Notification) {
+        viewForContent.fadeOut()
+        wordChapterLbl.textColor = .white
         viewForContent.fadeIn()
     }
 }
