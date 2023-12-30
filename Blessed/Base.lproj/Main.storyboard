@@ -36,14 +36,14 @@
                                                 <attributes>
                                                     <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="word Chapter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ah2-xB-LaW">
-                                        <rect key="frame" x="144.66666666666666" y="80.333333333333343" width="104" height="21"/>
+                                        <rect key="frame" x="144.66666666666666" y="90.333333333333343" width="104" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -51,12 +51,12 @@
                                 </subviews>
                                 <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="jUS-Bg-UMi" secondAttribute="bottom" constant="35" id="9gT-xz-6VH"/>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="2T1-28-WVJ"/>
+                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="top" secondItem="jUS-Bg-UMi" secondAttribute="bottom" constant="45" id="Dcb-Qa-rGD"/>
                                     <constraint firstItem="jUS-Bg-UMi" firstAttribute="leading" secondItem="ycX-94-hlE" secondAttribute="leading" constant="15" id="LBs-Wb-bEk"/>
                                     <constraint firstAttribute="trailing" secondItem="jUS-Bg-UMi" secondAttribute="trailing" constant="15" id="Odu-Nd-BS4"/>
                                     <constraint firstItem="jUS-Bg-UMi" firstAttribute="top" secondItem="ycX-94-hlE" secondAttribute="top" constant="25" id="VOK-Wh-hX8"/>
                                     <constraint firstAttribute="height" constant="200" id="j17-kR-hvT"/>
-                                    <constraint firstItem="ah2-xB-LaW" firstAttribute="centerX" secondItem="ycX-94-hlE" secondAttribute="centerX" id="x2w-xt-XS3"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -76,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="grH-gv-LyM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2282" y="-3100"/>
+            <point key="canvasLocation" x="-2283.2061068702287" y="-3100"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="E1J-pk-fff">
@@ -125,7 +125,7 @@
                                             <fragment content="word">
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>
@@ -184,7 +184,7 @@
                                             <fragment content="word">
                                                 <attributes>
                                                     <font key="NSFont" metaFont="system" size="17"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="7" tighteningFactorForTruncation="0.0"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineSpacing="11" tighteningFactorForTruncation="0.0"/>
                                                 </attributes>
                                             </fragment>
                                         </attributedString>

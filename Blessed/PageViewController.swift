@@ -10,20 +10,42 @@ import SnapKit
 import Then
 
 class PageViewController: UIPageViewController {
-    
-//    var wordDataInPageVC: WordData = WordData()
-    
+        
     var wordData: WordData = WordData()
-    
-    let pageControl = UIPageControl().then {
-        _ in
-    }
     
     lazy var vcArray: [UIViewController] = {
         return [self.vcInstance(name: "FirstPageVC"),
                 self.vcInstance(name: "SecondPageVC"),
                 self.vcInstance(name: "ThirdPageVC")]
     }()
+    
+    let pageControl = UIPageControl().then {
+        _ in
+    }
+    
+    let customizeColorStackView = UIStackView().then {
+        $0.layer.borderWidth = 3
+        $0.layer.borderColor = UIColor.lightGray.cgColor
+        $0.layer.cornerRadius = 16
+    }
+    
+    let textColorToBlackBtn = UIButton().then {
+        $0.backgroundColor = .lightGray
+        $0.layer.cornerRadius = 15
+        $0.titleLabel?.font = UIFont(name: "Copperplate", size: 21)
+        $0.setTitle("T", for: .normal)
+        $0.setTitleColor(UIColor.black, for: .normal)
+    }
+    
+    let textColorToWhiteBtn = UIButton().then {
+        $0.backgroundColor = .lightGray
+        $0.layer.cornerRadius = 15
+        $0.titleLabel?.font = UIFont(name: "Copperplate", size: 21)
+        $0.setTitle("T", for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+    }
+    
+    let backgroundColorPicker = UIColorWell(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
     
     let resetWordBtn = UIButton().then {
         $0.setBackgroundImage(UIImage(systemName: "arrow.triangle.2.circlepath.circle.fill"), for: .normal)
@@ -60,6 +82,33 @@ class PageViewController: UIPageViewController {
             $0.height.equalTo(35)
             $0.bottom.equalToSuperview().inset(170)
             $0.centerX.equalToSuperview()
+        }
+        
+        view.addSubview(customizeColorStackView)
+        customizeColorStackView.axis = .horizontal
+        customizeColorStackView.snp.makeConstraints {
+            $0.width.equalTo(150)
+            $0.height.equalTo(45)
+            $0.bottom.equalToSuperview().inset(70)
+            $0.centerX.equalToSuperview()
+        }
+        customizeColorStackView.addSubview(textColorToBlackBtn)
+        textColorToBlackBtn.snp.makeConstraints {
+            $0.width.equalTo(30)
+            $0.height.equalTo(30)
+            $0.leading.equalToSuperview().inset(15)
+            $0.centerY.equalToSuperview()
+        }
+        customizeColorStackView.addSubview(textColorToWhiteBtn)
+        textColorToWhiteBtn.snp.makeConstraints {
+            $0.width.equalTo(30)
+            $0.height.equalTo(30)
+            $0.center.equalToSuperview()
+        }
+        customizeColorStackView.addSubview(backgroundColorPicker)
+        backgroundColorPicker.snp.makeConstraints {
+            $0.trailing.equalToSuperview().inset(15)
+            $0.centerY.equalToSuperview()
         }
     }
     

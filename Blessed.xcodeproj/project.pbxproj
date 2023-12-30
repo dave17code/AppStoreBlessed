@@ -29,13 +29,13 @@
 		4E4086442B328E0C0083518B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4E4086472B328E0C0083518B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4E4086492B328E0C0083518B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4E81BA592B36841D00555C70 /* Blessed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = Blessed.app; path = "/Users/doowoon/Desktop/Blessed/build/Debug-iphoneos/Blessed.app"; sourceTree = "<absolute>"; };
 		4E81BA5A2B36968500555C70 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		4E81BA5C2B36993100555C70 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4E81BA5E2B369BC200555C70 /* FirstPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstPageVC.swift; sourceTree = "<group>"; };
 		4E81BA602B36A36A00555C70 /* SecondPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPageVC.swift; sourceTree = "<group>"; };
 		4E81BA622B36A3A100555C70 /* ThirdPageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPageVC.swift; sourceTree = "<group>"; };
 		4E9B768C2B34AA8E002E9ADA /* WordData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordData.swift; sourceTree = "<group>"; };
+		4EE7B2792B3FD13700CD42C7 /* Blessed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blessed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56E6A87394231B605F4BCE5A /* Pods-Blessed.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Blessed.debug.xcconfig"; path = "Target Support Files/Pods-Blessed/Pods-Blessed.debug.xcconfig"; sourceTree = "<group>"; };
 		805B52101546E103B9729D98 /* Pods_Blessed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Blessed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -58,7 +58,6 @@
 				56E6A87394231B605F4BCE5A /* Pods-Blessed.debug.xcconfig */,
 				12CE070471E34ACA73C8DCE4 /* Pods-Blessed.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -68,6 +67,7 @@
 				4E40863A2B328E0A0083518B /* Blessed */,
 				1DEFF79573838FE0025A884D /* Pods */,
 				DCA43C53A03EA2074AD77C29 /* Frameworks */,
+				4EE7B2792B3FD13700CD42C7 /* Blessed.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,10 +76,10 @@
 			children = (
 				4E40863B2B328E0A0083518B /* AppDelegate.swift */,
 				4E40863D2B328E0A0083518B /* SceneDelegate.swift */,
-				4E81BA5C2B36993100555C70 /* ViewController.swift */,
-				4E81BA5A2B36968500555C70 /* PageViewController.swift */,
 				4E9B768C2B34AA8E002E9ADA /* WordData.swift */,
 				4E4086412B328E0A0083518B /* Main.storyboard */,
+				4E81BA5A2B36968500555C70 /* PageViewController.swift */,
+				4E81BA5C2B36993100555C70 /* ViewController.swift */,
 				4E81BA5E2B369BC200555C70 /* FirstPageVC.swift */,
 				4E81BA602B36A36A00555C70 /* SecondPageVC.swift */,
 				4E81BA622B36A3A100555C70 /* ThirdPageVC.swift */,
@@ -117,7 +117,7 @@
 			);
 			name = Blessed;
 			productName = Blessed;
-			productReference = 4E81BA592B36841D00555C70 /* Blessed.app */;
+			productReference = 4EE7B2792B3FD13700CD42C7 /* Blessed.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -296,7 +296,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -350,7 +350,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -376,7 +376,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -406,7 +406,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

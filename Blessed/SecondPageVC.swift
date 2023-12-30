@@ -18,12 +18,12 @@ class SecondPageVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        wordLbl.font = UIFont(name: "Copperplate", size: 23)
+        wordLbl.font = UIFont(name: "Kefa", size: 22)
         wordLbl.textAlignment = .center
         wordLbl.numberOfLines = 0
         wordLbl.text = Array(wordData.wordDictionary.values)[1]
 
-        wordChapterLbl.font = UIFont(name: "Copperplate", size: 16)
+        wordChapterLbl.font = UIFont(name: "Kefa", size: 16)
         wordChapterLbl.textAlignment = .center
         wordChapterLbl.text = Array(wordData.wordDictionary.keys)[1]
         
