@@ -58,33 +58,25 @@ class SecondPageVC: UIViewController {
     
     @objc func wordLblColorToBlack(_ notification: Notification) {
         viewForContent.fadeOut()
-        if let text = notification.object as? String {
-            wordChapterLbl.textColor = .black
-        }
+        wordLbl.textColor = .black
         viewForContent.fadeIn()
     }
     
     @objc func wordChapterLblColorToBlack(_ notification: Notification) {
         viewForContent.fadeOut()
-        if let text = notification.object as? String {
-            wordChapterLbl.textColor = .black
-        }
+        wordChapterLbl.textColor = .black
         viewForContent.fadeIn()
     }
     
     @objc func wordLblColorToWhite(_ notification: Notification) {
         viewForContent.fadeOut()
-        if let text = notification.object as? String {
-            wordChapterLbl.textColor = .white
-        }
+        wordLbl.textColor = .white
         viewForContent.fadeIn()
     }
     
     @objc func wordChapterLblColorToWhite(_ notification: Notification) {
         viewForContent.fadeOut()
-        if let text = notification.object as? String {
-            wordChapterLbl.textColor = .white
-        }
+        wordChapterLbl.textColor = .white
         viewForContent.fadeIn()
     }
 }

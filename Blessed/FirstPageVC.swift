@@ -40,6 +40,8 @@ class FirstPageVC: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(wordLblColorToWhite(_:)), name: Notification.Name("wordLblColorToWhite"), object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(wordChapterLblColorToWhite(_:)), name: Notification.Name("wordChapterLblColorToWhite"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(viewBackgroundColorChange(_:)), name: Notification.Name("viewBackgroundColorChange"), object: nil)
     }
     
     private func vcInstance(name: String) -> UIViewController {
@@ -84,6 +86,14 @@ class FirstPageVC: UIViewController {
         viewForContent.fadeOut()
         wordChapterLbl.textColor = .white
         viewForContent.fadeIn()
+    }
+    
+    @objc func viewBackgroundColorChange(_ notification: Notification) {
+    
+        if let color = notification.object as? String {
+            print(color)
+            self.view.backgroundColor = UIColor(named: color)
+        }
     }
 }
 

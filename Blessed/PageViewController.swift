@@ -49,15 +49,15 @@ class PageViewController: UIPageViewController {
         $0.addTarget(self, action: #selector(wordChapterLblTextColorToWhite(_:)), for: .touchUpInside)
     }
     
-    let backgroundColorPicker = UIColorWell(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-    
     let resetWordBtn = UIButton().then {
         $0.setBackgroundImage(UIImage(systemName: "arrow.triangle.2.circlepath.circle.fill"), for: .normal)
         $0.backgroundColor = .clear
         $0.tintColor = UIColor.lightGray
         $0.addTarget(self, action: #selector(resetWordBtnTapped(_:)), for: .touchUpInside)
     }
-
+    
+    var colorWell: UIColorWell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -109,8 +109,9 @@ class PageViewController: UIPageViewController {
             $0.height.equalTo(30)
             $0.center.equalToSuperview()
         }
-        customizeColorStackView.addSubview(backgroundColorPicker)
-        backgroundColorPicker.snp.makeConstraints {
+        addColorWell()
+        customizeColorStackView.addSubview(colorWell)
+        colorWell.snp.makeConstraints {
             $0.trailing.equalToSuperview().inset(15)
             $0.centerY.equalToSuperview()
         }
@@ -141,7 +142,6 @@ class PageViewController: UIPageViewController {
         
         NotificationCenter.default.post(name: Notification.Name("resetWordLblThirdPageVC"), object: Array(wordData.resetWordDictionaryData.values)[2])
         NotificationCenter.default.post(name: Notification.Name("resetWordChapterLblThirdPageVC"), object: Array(wordData.resetWordDictionaryData.keys)[2])
-        
     }
     
     @objc func wordLblTextColorToBlack(_ sender: Any) {
@@ -158,6 +158,21 @@ class PageViewController: UIPageViewController {
     
     @objc func wordChapterLblTextColorToWhite(_ sender: Any) {
         NotificationCenter.default.post(name: Notification.Name("wordChapterLblColorToWhite"), object: nil)
+    }
+    
+    func addColorWell() {
+        colorWell = UIColorWell(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
+        self.customizeColorStackView.addSubview(colorWell)
+        colorWell.addTarget(self, action: #selector(viewBackgroundColorChange(_:)), for: .valueChanged)
+    }
+    
+//    @objc func viewBackgroundColorChange(_ sender: Any) {
+//        NotificationCenter.default.post(name: Notification.Name("viewBackgroundColorChange"), object: backgroundColorPicker.selectedColor)
+//    }
+    
+    @objc func viewBackgroundColorChange(_ sender: Any) {
+        self.view.backgroundColor = colorWell.selectedColor
+        
     }
 }
 
@@ -181,6 +196,8 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         // 인덱스는 vcArray.count 이상이 될 수 없음
         guard vcArray.count > prevIndex else { return nil }
         
+        vcArray[prevIndex].view.backgroundColor = colorWell.selectedColor
+        
         return vcArray[prevIndex]
     }
     
@@ -197,6 +214,8 @@ extension PageViewController: UIPageViewControllerDataSource, UIPageViewControll
         
         guard vcArray.count > nextIndex else { return nil }
         
+        vcArray[nextIndex].view.backgroundColor = colorWell.selectedColor
+
         return vcArray[nextIndex]
     }
     
