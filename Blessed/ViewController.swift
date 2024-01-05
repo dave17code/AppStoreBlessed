@@ -10,25 +10,32 @@ import UIKit
 class ViewController: UIViewController {
         
     var wordData: WordData = WordData()
-    
+
+    @IBOutlet weak var colorWell: UIColorWell!
     @IBOutlet weak var bibleAnimation: UIImageView!
     @IBOutlet weak var wordLbl: UILabel!
     @IBOutlet weak var wordChapterLbl: UILabel!
+    @IBOutlet weak var mainViewForLayout: UIView!
     @IBOutlet weak var wordContentView: UIView!
+    @IBOutlet weak var btnsHStackView: UIStackView!
     @IBOutlet weak var wordResetBtn: UIButton!
     @IBOutlet weak var wordContentColorToBlack: UIButton!
     @IBOutlet weak var wordContentColorToWhite: UIButton!
     
-//    var colorWell: UIColorWell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
+        wordLbl.font = UIFont(name: "Kefa", size: 22)
         wordLbl.text = Array(wordData.wordDictionary
             .values)[0]
+        
+        wordChapterLbl.font = UIFont(name: "Kefa", size: 17)
         wordChapterLbl.text = Array(wordData.wordDictionary.keys)[0]
         wordContentColorToBlack.layer.cornerRadius = 17.5
         wordContentColorToWhite.layer.cornerRadius = 17.5
+        
+        colorWell.addTarget(self, action: #selector(viewBackgroundColorChange(_:)), for: .valueChanged)
     }
     
     @IBAction func wordRestBtn(_ sender: Any) {
@@ -49,29 +56,22 @@ class ViewController: UIViewController {
         wordContentView.fadeIn()
     }
     
+    @IBAction func wordContentColorToBlack(_ sender: Any) {
+        wordLbl.textColor = .black
+        wordChapterLbl.textColor = .black
+    }
+    
+    @IBAction func wordContentColorToWhite(_ sender: Any) {
+        wordLbl.textColor = .white
+        wordChapterLbl.textColor = .white
+    }
 
-    
-    @objc func wordLblTextColorToBlack(_ sender: Any) {
+    @objc func viewBackgroundColorChange(_ sender: Any) {
+        self.view.backgroundColor = colorWell.selectedColor
+        self.mainViewForLayout.backgroundColor = colorWell.selectedColor
+        self.wordContentView.backgroundColor = colorWell.selectedColor
+        self.btnsHStackView.backgroundColor = colorWell.selectedColor
     }
-    
-    @objc func wordChapterLblTextColorToBlack(_ sender: Any) {
-    }
-    
-    @objc func wordLblTextColorToWhite(_ sender: Any) {
-    }
-    
-    @objc func wordChapterLblTextColorToWhite(_ sender: Any) {
-    }
-    
-//    func addColorWell() {
-//        colorWell = UIColorWell(frame: CGRect(x: 0, y: 0, width: 35, height: 35))
-//        self.customizeColorStackView.addSubview(colorWell)
-//        colorWell.addTarget(self, action: #selector(viewBackgroundColorChange(_:)), for: .valueChanged)
-//    }
-//
-//    @objc func viewBackgroundColorChange(_ sender: Any) {
-//        self.view.backgroundColor = colorWell.selectedColor
-//    }
 }
 
 public extension UIView {

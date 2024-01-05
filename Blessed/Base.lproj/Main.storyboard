@@ -30,36 +30,39 @@
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="tpM-T6-fEM">
-                                        <rect key="frame" x="110" y="550" width="173" height="35"/>
+                                        <rect key="frame" x="120" y="550" width="153" height="35"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FiF-WQ-9oW">
-                                                <rect key="frame" x="0.0" y="0.0" width="35" height="35"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="35"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="35" id="CAp-0R-NcT"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="26"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="T">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="wordContentColorToBlack:" destination="3pf-lK-h8Y" eventType="touchUpInside" id="oxw-AU-t5N"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXY-HA-54R">
-                                                <rect key="frame" x="46" y="0.0" width="35" height="35"/>
+                                                <rect key="frame" x="41" y="0.0" width="30" height="35"/>
                                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="30"/>
+                                                <fontDescription key="fontDescription" name="Copperplate-Bold" family="Copperplate" pointSize="26"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                 <state key="normal" title="T">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="wordContentColorToWhite:" destination="3pf-lK-h8Y" eventType="touchUpInside" id="jH7-1r-AAR"/>
+                                                </connections>
                                             </button>
                                             <colorWell contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="nxA-Kv-7za">
-                                                <rect key="frame" x="92" y="0.0" width="35" height="35"/>
+                                                <rect key="frame" x="82" y="0.0" width="30" height="35"/>
                                             </colorWell>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etR-2n-9Wr">
-                                                <rect key="frame" x="138" y="1" width="35" height="33.666666666666671"/>
+                                                <rect key="frame" x="123" y="1" width="30" height="33.666666666666671"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                 <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -100,7 +103,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                        <color key="backgroundColor" name="BlessedAppMainColor"/>
                                         <constraints>
                                             <constraint firstItem="jUS-Bg-UMi" firstAttribute="leading" secondItem="5Ki-EE-CDU" secondAttribute="leading" constant="20" id="1jf-E0-TPy"/>
                                             <constraint firstAttribute="height" constant="300" id="7Ut-cc-LzV"/>
@@ -111,7 +114,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" name="BlessedAppMainColor"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="tpM-T6-fEM" secondAttribute="bottom" constant="25" id="3c4-0O-AXZ"/>
                                     <constraint firstAttribute="height" constant="610" id="7He-CW-UKP"/>
@@ -135,6 +138,9 @@
                     </view>
                     <connections>
                         <outlet property="bibleAnimation" destination="w9P-ut-MQv" id="qmp-kC-N8k"/>
+                        <outlet property="btnsHStackView" destination="tpM-T6-fEM" id="W2u-s4-ABh"/>
+                        <outlet property="colorWell" destination="nxA-Kv-7za" id="0Lc-WZ-SAF"/>
+                        <outlet property="mainViewForLayout" destination="ycX-94-hlE" id="hQd-Lq-JcS"/>
                         <outlet property="wordChapterLbl" destination="ah2-xB-LaW" id="pSH-5i-jni"/>
                         <outlet property="wordContentColorToBlack" destination="FiF-WQ-9oW" id="3fD-0G-XHS"/>
                         <outlet property="wordContentColorToWhite" destination="NXY-HA-54R" id="uDN-xS-Ocm"/>
